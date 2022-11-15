@@ -51,9 +51,9 @@ class TeamController extends Controller
         ]);
 
         Team::where('id', '=', $request->id)->update([
-            'name'      =>$request->name,
-            'short'     =>$request->short,
-            'manager'   =>$request->manager
+            'name'      =>  $request->name,
+            'short'     =>  $request->short,
+            'manager'   =>  $request->manager
         ]);
 
         return redirect()->back()->with('success', 'Team edited successfully');
