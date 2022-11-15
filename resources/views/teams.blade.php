@@ -20,7 +20,10 @@
                     <td>{{$team->name}}</td>
                     <td>{{$team->short}}</td>
                     <td>{{$team->manager}}</td>
-                    <td><button type="button" class="btn btn-primary" onclick="window.location='{{url("teams/$team->id/edit")}}'">Edit</button><button type="button" class="btn btn-danger" onclick="window.location='{{url("teams/$team->id/edit")}}'">Delete</button></td>
+                    <td>
+                        <a href="{{url('edit-team/'.$team->id)}}" class="btn btn-primary">Edit</a>
+                        <a href="{{url('delete/'.$team->id)}}" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
             @empty
                 <h1>Nothing to see here</h1>
@@ -28,10 +31,4 @@
         </tr>
         </tbody>
     </table>
-
-    <script>
-        function add(){
-            location.href='teams/create';
-        }
-    </script>
 @endsection
