@@ -19,7 +19,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/teams', [TeamController::class, 'index']);
+Route::get('teams', [TeamController::class, 'index']);
+Route::get('create-team', [TeamController::class, 'create']);
+Route::post('save', [TeamController::class, 'save']);
+Route::get('edit-team/{id}',[TeamController::class, 'edit']);
+Route::post('update', [TeamController::class,'update']);
+Route::get('delete/{id}', [TeamController::class, 'delete']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
