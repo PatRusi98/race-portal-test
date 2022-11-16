@@ -5,6 +5,11 @@
             <div class="col-md-12">
                 <h2>Edit Team</h2>
             </div>
+            @if(Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                </div>
+            @endif
         </div>
         <form method="post" action="{{url('update')}}">
             @csrf

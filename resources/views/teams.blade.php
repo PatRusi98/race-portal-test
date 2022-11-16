@@ -1,7 +1,14 @@
 @extends('rp_components.master')
 
 @section('content')
-    <a href="{{url('create-team')}}" class="btn btn-success">Add</a>
+    <div style="margin-top: 20px"></div>
+    <a href="{{url('create-team')}}" class="btn btn-success" style="margin-left: 20px">Add</a>
+    @if(Session::has('success'))
+        <div class=" row alert alert-success" role="alert">
+            {{Session::get('success')}}
+        </div>
+    @endif
+    <div style="margin-top: 20px"></div>
     <table class="table table-striped table-bordered">
         <thead>
         <tr>

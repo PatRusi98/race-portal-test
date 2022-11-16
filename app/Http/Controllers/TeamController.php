@@ -10,7 +10,6 @@ class TeamController extends Controller
     public function index()
     {
         $data = Team::get();
-        //return $data;
         return view('teams', compact('data'));
     }
 
@@ -22,15 +21,15 @@ class TeamController extends Controller
     public function save(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'short' => 'required',
-            'manager' => 'required'
+            'name'      => 'required',
+            'short'     => 'required',
+            'manager'   => 'required'
         ]);
 
         $team = new Team();
-        $team->name = $request->name;
-        $team->short = $request->short;
-        $team->manager = $request->manager;
+        $team->name     = $request->name;
+        $team->short    = $request->short;
+        $team->manager  = $request->manager;
         $team->save();
 
         return redirect()->back()->with('success', 'Team created successfully');
@@ -45,9 +44,9 @@ class TeamController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'short' => 'required',
-            'manager' => 'required'
+            'name'      => 'required',
+            'short'     => 'required',
+            'manager'   => 'required'
         ]);
 
         Team::where('id', '=', $request->id)->update([
@@ -63,6 +62,6 @@ class TeamController extends Controller
     {
         Team::where('id', '=', $id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Team deleted successfully');
     }
 }
