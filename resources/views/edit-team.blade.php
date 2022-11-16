@@ -17,14 +17,29 @@
             <div class="form-group">
                 <label for="team_name">Team Name</label>
                 <input type="text" class="form-control" name="name" placeholder="e.g. Mercedes" value="{{$data->name}}">
+                @error('name')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="team_short_name">Team Short Name</label>
                 <input type="text" class="form-control" name="short" placeholder="e.g. MER" value="{{$data->short}}">
+                @error('short')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="team_manager">Team Manager</label>
                 <input type="text" class="form-control" name="manager" placeholder="e.g. Toto Wolff" value="{{$data->manager}}">
+                @error('manager')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
         </form>
