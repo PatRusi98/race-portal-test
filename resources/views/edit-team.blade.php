@@ -16,7 +16,7 @@
             <input type="hidden" name="id" value="{{$data->id}}">
             <div class="form-group">
                 <label for="team_name">Team Name</label>
-                <input type="text" class="form-control" name="name" placeholder="e.g. Mercedes" value="{{$data->name}}">
+                <input type="text" class="form-control" name="name" placeholder="e.g. Mercedes" pattern="[A-Za-z0-9\s]+" title="Letters only" value="{{$data->name}}">
                 @error('name')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="team_short_name">Team Short Name</label>
-                <input type="text" class="form-control" name="short" placeholder="e.g. MER" value="{{$data->short}}">
+                <input type="text" class="form-control" name="short" placeholder="e.g. MER" pattern="[A-Z0-9]{3}" title="Three letter uppercase short name" value="{{$data->short}}">
                 @error('short')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label for="team_manager">Team Manager</label>
-                <input type="text" class="form-control" name="manager" placeholder="e.g. Toto Wolff" value="{{$data->manager}}">
+                <input type="text" class="form-control" name="manager" placeholder="e.g. Toto Wolff" pattern="[A-Za-z0-9\s]+" title="Letters only" value="{{$data->manager}}">
                 @error('manager')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
